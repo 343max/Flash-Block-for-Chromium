@@ -1,0 +1,13 @@
+{
+	"name": "Flash Blocks",
+	"version": "0.1",
+	"description": "Blocks Flash Content from Webpages to reduce the CPU usage of your Browser.",
+	
+	"content_scripts": [
+		{
+			"matches": ["http://*/*"],
+			"css": ["flashBlock.css"],
+			"js": ["flashBlock.js"]
+		}
+	]
+}
