@@ -1,6 +1,6 @@
 {
 	"name": "Flash Block",
-	"version": "0.1",
+	"version": "0.1.1",
 	"description": "Blocks Flash Content from Webpages to reduce the CPU usage of your Browser.",
 	"update_url": "http://github.com/343max/Flash-Block-for-Chromium/raw/master/updates.xml",
 	

@@ -1,10 +1,19 @@
 
 function removeFlashHandler() {
 	var replaceNode = function(node) {
+		
+		// was blocked, but user clicked allready
 		if(node.hasFlashUnblocked) return;
+		
+		// embed tag inside an object tag - don't block twice
+		if(node.parentNode.nodeName == 'OBJECT') return;
+		
+		
 		var div = document.createElement('div');
 		var childDiv = document.createElement('div');
 		div.setAttribute('class', 'flashBlockBlockedDiv');
+		
+		//div.setAttribute('style', window.getComputedStyle(node));
 		
 		childDiv.style.width = div.style.width = Math.max(50, (node.clientWidth - 2)) + 'px';
 		childDiv.style.height = div.style.height = Math.max(26, (node.clientHeight - 2)) + 'px';
