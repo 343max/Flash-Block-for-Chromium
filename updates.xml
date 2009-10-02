@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
+  <app appid='lnnlknkoljedafigphpabomphgpikmbl'>
+    <updatecheck codebase='http://github.com/343max/Flash-Block-for-Chromium/raw/master/chromeFlashBlock.crx' version='0.1' />
+  </app>
+</gupdate>
