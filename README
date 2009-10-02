@@ -3,4 +3,6 @@ chromeFlashBlock is a simple extension that block Flash Content in Googles Chrom
 
 This is my very first extension and it isn't doing to much for now. The blocking mechanism is very rough. If you have any problems write me or something.
 
+Tested with Chrome 3.0 on Windows and Chromium Nighlty Builds on the Mac.
+
 @343max
