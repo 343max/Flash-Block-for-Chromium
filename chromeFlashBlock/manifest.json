@@ -8,7 +8,8 @@
 		{
 			"matches": ["http://*/*"],
 			"css": ["flashBlock.css"],
-			"js": ["flashBlock.js"]
+			"js": ["flashBlock.js"],
+			"run_at": "document_start"
 		}
 	]
 }

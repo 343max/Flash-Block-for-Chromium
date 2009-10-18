@@ -49,14 +49,15 @@ function removeFlashHandler() {
 	
 	for (var i = 0; i < 10000; i+= 300) {
 		window.setTimeout(function(){
+			console.log('ping');
 			removeFlash();
 		}, i);
 	};
 }
 
-window.onload = function() {
+/* window.onload = function() {
 	console.log(document.location.href);
 	removeFlashHandler();
-}
+} */
 
 removeFlashHandler();
