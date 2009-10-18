@@ -3,6 +3,7 @@ div.flashBlockBlockedDiv {
 	border: 1px solid #575356 !important;
 	display: block !important;
 	background: -webkit-gradient(linear, left top, left bottom, from(#ada5aa), to(#686266));
+/*	background: -webkit-gradient(linear, left top, left bottom, from(#84b6f2), to(#4e95ec)); */
 	
 	cursor: pointer !important;
 	
@@ -13,6 +14,9 @@ div.flashBlockBlockedDiv {
 div.flashBlockBlockedDiv:hover {
 	border-color: black;
 	opacity: 0.6;
+	
+	background: -webkit-gradient(linear, left top, left bottom, from(#84b6f2), to(#4e95ec));
+	border-color: #3669a6 !important;
 }
 
 div.flashBlockBlockedDiv>div {
