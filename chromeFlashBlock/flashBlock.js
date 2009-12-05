@@ -1,6 +1,6 @@
 
 function removeFlashHandler() {
-	var replaceNode = function(node) {
+	var replaceNode = function(node, backgroundImageName) {
 		
 		// was blocked, but user clicked allready
 		if(node.hasFlashUnblocked) return;
@@ -18,7 +18,7 @@ function removeFlashHandler() {
 		childDiv.style.width = div.style.width = Math.max(50, (node.clientWidth - 2)) + 'px';
 		childDiv.style.height = div.style.height = Math.max(26, (node.clientHeight - 2)) + 'px';
 		
-		childDiv.style.backgroundImage = 'url(' + chrome.extension.getURL('flashBlockBg.png') + ')';
+		childDiv.style.backgroundImage = 'url(' + chrome.extension.getURL(backgroundImageName) + ')';
 		
 		div.appendChild(childDiv);
 		
@@ -32,22 +32,21 @@ function removeFlashHandler() {
 	}
 	
 	var removeFlash = function(doc) {
+		var iframes = doc.getElementsByTagName('iframe');
+		for(var i = 0; i < iframes.length; i++) {
+			replaceNode(iframes[i], 'iframeBlockBg.png');
+		}
+
 		var objects = doc.getElementsByTagName('object');
 	
 		for(var i = 0; i < objects.length; i++) {
-			replaceNode(objects[i]);
+			replaceNode(objects[i], 'flashBlockBg.png');
 		}
 		
 		var embeds = doc.getElementsByTagName('embed');
 		
 		for(var i = 0; i < embeds.length; i++) {
-			replaceNode(embeds[i]);
-		}
-		
-		var iframes = doc.getElementsByTagName('ifrmae');
-		
-		for(var i = 0; i < iframes.length; i++) {
-			removeFlash(iframes[i].contentDocument);
+			replaceNode(embeds[i], 'flashBlockBg.png');
 		}
 	}
 	
