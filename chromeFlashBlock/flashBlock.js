@@ -31,26 +31,31 @@ function removeFlashHandler() {
 		node.parentNode.replaceChild(div, node);
 	}
 	
-	var removeFlash = function() {
-		objects = document.getElementsByTagName('object');
+	var removeFlash = function(doc) {
+		var objects = doc.getElementsByTagName('object');
 	
 		for(var i = 0; i < objects.length; i++) {
 			replaceNode(objects[i]);
 		}
 		
-		embeds = document.getElementsByTagName('embed');
+		var embeds = doc.getElementsByTagName('embed');
 		
 		for(var i = 0; i < embeds.length; i++) {
 			replaceNode(embeds[i]);
 		}
+		
+		var iframes = doc.getElementsByTagName('ifrmae');
+		
+		for(var i = 0; i < iframes.length; i++) {
+			removeFlash(iframes[i].contentDocument);
+		}
 	}
 	
-	removeFlash();
+	removeFlash(document);
 	
 	for (var i = 0; i < 10000; i+= 300) {
 		window.setTimeout(function(){
-			console.log('ping');
-			removeFlash();
+			removeFlash(document);
 		}, i);
 	};
 }
